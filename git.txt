@@ -1,0 +1,720 @@
+echo "# FSBM-Daif-Docker-TP_001" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+git push -u origin main
+
+
+
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    📚 DOCUMENTATION COMPLÈTE - COLLABORATION GIT & DOCKER
+    Projet: FSBM-Daif-Docker-TP_001
+    Prof. Abderahmane DAIF - Département Informatique
+═══════════════════════════════════════════════════════════════════════════════
+
+TABLE DES MATIÈRES
+──────────────────
+1. Configuration Initiale
+2. Workflow pour Hamza (Propriétaire du Repo)
+3. Workflow pour les Collaborateurs
+4. Commandes Git Essentielles
+5. Gestion des Branches
+6. Résolution des Conflits
+7. Commandes Docker
+8. Bonnes Pratiques
+9. Dépannage (Troubleshooting)
+
+═══════════════════════════════════════════════════════════════════════════════
+    1️⃣ CONFIGURATION INITIALE
+═══════════════════════════════════════════════════════════════════════════════
+
+📦 INSTALLATION DE GIT
+──────────────────────
+Windows: https://git-scm.com/download/win
+Mac: brew install git
+Linux: sudo apt-get install git
+
+🔧 CONFIGURATION DE GIT (Première fois seulement)
+──────────────────────────────────────────────────
+git config --global user.name "Ton Nom"
+git config --global user.email "ton.email@example.com"
+
+# Vérifier la configuration
+git config --list
+
+# Configurer l'éditeur par défaut (optionnel)
+git config --global core.editor "code --wait"  # Pour VS Code
+git config --global core.editor "nano"          # Pour Nano
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    2️⃣ WORKFLOW POUR HAMZA (Propriétaire du Repo)
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 CRÉATION INITIALE DU PROJET (Déjà fait)
+───────────────────────────────────────────
+echo "# FSBM-Daif-Docker-TP_001" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+git push -u origin main
+
+📤 AJOUTER DE NOUVELLES MODIFICATIONS
+──────────────────────────────────────
+# 1. Vérifier l'état des fichiers
+git status
+
+# 2. Ajouter les fichiers modifiés
+git add .                    # Ajouter tous les fichiers
+git add index.html style.css # Ajouter des fichiers spécifiques
+
+# 3. Commiter avec un message descriptif
+git commit -m "Ajout du footer fixe et amélioration du design"
+
+# 4. Push vers GitHub
+git push origin main
+
+🔄 RÉCUPÉRER LES MODIFICATIONS DES COLLABORATEURS
+──────────────────────────────────────────────────
+# Avant de commencer à travailler, toujours pull
+git pull origin main
+
+👥 AJOUTER UN COLLABORATEUR SUR GITHUB
+───────────────────────────────────────
+1. Aller sur: https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001
+2. Cliquer sur "Settings"
+3. Dans le menu de gauche, cliquer sur "Collaborators"
+4. Cliquer sur "Add people"
+5. Entrer le username GitHub de ton ami
+6. Ton ami recevra un email d'invitation
+7. Il doit accepter l'invitation pour avoir accès
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    3️⃣ WORKFLOW POUR LES COLLABORATEURS
+═══════════════════════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    OPTION A: COLLABORATION DIRECTE (Accès au repo principal)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Condition: Hamza t'a ajouté comme collaborateur et tu as accepté l'invitation
+
+📥 ÉTAPE 1: CLONER LE PROJET
+────────────────────────────
+git clone https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+cd FSBM-Daif-Docker-TP_001
+
+✏️ ÉTAPE 2: FAIRE DES MODIFICATIONS
+────────────────────────────────────
+# Toujours récupérer les dernières modifications avant de travailler
+git pull origin main
+
+# Faire tes modifications dans les fichiers...
+
+# Vérifier les fichiers modifiés
+git status
+
+# Voir les différences
+git diff
+
+📤 ÉTAPE 3: COMMIT ET PUSH
+──────────────────────────
+# Ajouter les fichiers
+git add .
+
+# Commiter avec un message clair
+git commit -m "Description précise de tes modifications"
+
+# Push vers GitHub
+git push origin main
+
+💡 EXEMPLE COMPLET:
+───────────────────
+cd FSBM-Daif-Docker-TP_001
+git pull origin main
+# Modifier index.html et style.css
+git add index.html style.css
+git commit -m "Ajout d'une section contact et amélioration du responsive"
+git push origin main
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    OPTION B: PULL REQUEST (Méthode Professionnelle)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🍴 ÉTAPE 1: FORK LE PROJET
+───────────────────────────
+1. Aller sur: https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001
+2. Cliquer sur le bouton "Fork" en haut à droite
+3. Le projet sera copié dans ton compte GitHub
+
+📥 ÉTAPE 2: CLONER TON FORK
+───────────────────────────
+git clone https://github.com/TON_USERNAME/FSBM-Daif-Docker-TP_001.git
+cd FSBM-Daif-Docker-TP_001
+
+# Ajouter le repo original comme "upstream"
+git remote add upstream https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+
+# Vérifier les remotes
+git remote -v
+# Tu devrais voir:
+# origin    https://github.com/TON_USERNAME/FSBM-Daif-Docker-TP_001.git (fetch)
+# origin    https://github.com/TON_USERNAME/FSBM-Daif-Docker-TP_001.git (push)
+# upstream  https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git (fetch)
+# upstream  https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git (push)
+
+🌿 ÉTAPE 3: CRÉER UNE BRANCHE POUR TES MODIFICATIONS
+─────────────────────────────────────────────────────
+# Créer et basculer sur une nouvelle branche
+git checkout -b feature/ma-nouvelle-fonctionnalite
+
+# OU en deux commandes
+git branch feature/ma-nouvelle-fonctionnalite
+git checkout feature/ma-nouvelle-fonctionnalite
+
+# Exemples de noms de branches:
+# - feature/ajout-section-contact
+# - fix/correction-footer
+# - enhance/amelioration-responsive
+
+✏️ ÉTAPE 4: FAIRE TES MODIFICATIONS
+────────────────────────────────────
+# Modifier les fichiers...
+# Vérifier les changements
+git status
+git diff
+
+📤 ÉTAPE 5: COMMIT ET PUSH SUR TA BRANCHE
+──────────────────────────────────────────
+git add .
+git commit -m "Description claire de tes modifications"
+git push origin feature/ma-nouvelle-fonctionnalite
+
+🔀 ÉTAPE 6: CRÉER UNE PULL REQUEST
+───────────────────────────────────
+1. Aller sur ton fork sur GitHub
+2. Tu verras un message "Compare & pull request" → Cliquer dessus
+3. Ajouter un titre et une description détaillée
+4. Cliquer sur "Create Pull Request"
+5. Hamza recevra une notification et pourra examiner tes modifications
+
+✅ ÉTAPE 7: HAMZA ACCEPTE LA PULL REQUEST
+──────────────────────────────────────────
+1. Hamza va sur son repo → Onglet "Pull Requests"
+2. Il examine les modifications
+3. Il peut commenter, demander des changements, ou accepter
+4. Il clique sur "Merge Pull Request"
+5. Il clique sur "Confirm Merge"
+6. Tes modifications sont maintenant dans le repo principal!
+
+🔄 ÉTAPE 8: SYNCHRONISER TON FORK APRÈS LE MERGE
+─────────────────────────────────────────────────
+# Revenir sur la branche main
+git checkout main
+
+# Récupérer les modifications du repo original
+git fetch upstream
+git merge upstream/main
+
+# Ou en une seule commande
+git pull upstream main
+
+# Push les modifications sur ton fork
+git push origin main
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    4️⃣ COMMANDES GIT ESSENTIELLES
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 CONSULTER L'ÉTAT ET L'HISTORIQUE
+────────────────────────────────────
+git status              # Voir l'état des fichiers
+git log                 # Voir l'historique des commits
+git log --oneline       # Historique condensé
+git log --graph         # Historique avec graphe
+git diff                # Voir les différences non commitées
+git diff fichier.html   # Différences pour un fichier spécifique
+git show                # Voir le dernier commit
+git show commit_id      # Voir un commit spécifique
+
+📝 AJOUTER ET COMMITER
+──────────────────────
+git add fichier.html              # Ajouter un fichier
+git add .                         # Ajouter tous les fichiers
+git add *.html                    # Ajouter tous les .html
+git commit -m "Message"           # Commiter avec message
+git commit -am "Message"          # Add + Commit (fichiers déjà trackés)
+
+↩️ ANNULER DES MODIFICATIONS
+─────────────────────────────
+git checkout -- fichier.html      # Annuler les modifs non commitées
+git reset HEAD fichier.html       # Unstage un fichier
+git reset --soft HEAD~1           # Annuler le dernier commit (garder les modifs)
+git reset --hard HEAD~1           # Annuler le dernier commit (TOUT supprimer)
+git revert commit_id              # Créer un nouveau commit qui annule un ancien
+
+🌐 SYNCHRONISATION AVEC GITHUB
+───────────────────────────────
+git push origin main              # Push sur la branche main
+git push origin nom-branche       # Push sur une branche spécifique
+git pull origin main              # Pull depuis main
+git fetch origin                  # Récupérer sans merger
+git clone url_du_repo             # Cloner un repo
+
+🔗 GESTION DES REMOTES
+──────────────────────
+git remote -v                     # Voir les remotes
+git remote add nom url            # Ajouter un remote
+git remote remove nom             # Supprimer un remote
+git remote rename ancien nouveau  # Renommer un remote
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    5️⃣ GESTION DES BRANCHES
+═══════════════════════════════════════════════════════════════════════════════
+
+🌿 CRÉER ET NAVIGUER
+────────────────────
+git branch                        # Lister les branches
+git branch nom-branche            # Créer une branche
+git checkout nom-branche          # Basculer sur une branche
+git checkout -b nom-branche       # Créer et basculer (en une commande)
+git switch nom-branche            # Nouvelle commande pour basculer (Git 2.23+)
+git switch -c nom-branche         # Créer et basculer (nouvelle syntaxe)
+
+🔀 FUSIONNER DES BRANCHES
+─────────────────────────
+# Exemple: Fusionner feature/contact dans main
+git checkout main                 # Basculer sur main
+git merge feature/contact         # Fusionner feature/contact dans main
+
+🗑️ SUPPRIMER DES BRANCHES
+──────────────────────────
+git branch -d nom-branche         # Supprimer localement (safe)
+git branch -D nom-branche         # Supprimer localement (force)
+git push origin --delete nom-branche  # Supprimer sur GitHub
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    6️⃣ RÉSOLUTION DES CONFLITS
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ QU'EST-CE QU'UN CONFLIT?
+───────────────────────────
+Un conflit survient quand deux personnes modifient la même ligne du même fichier.
+
+🔧 COMMENT RÉSOUDRE UN CONFLIT
+───────────────────────────────
+1. Git te dira qu'il y a un conflit après un pull ou merge:
+   CONFLICT (content): Merge conflict in index.html
+
+2. Ouvrir le fichier en conflit. Tu verras:
+   <<<<<<< HEAD
+   Ton code
+   =======
+   Le code de l'autre personne
+   >>>>>>> commit_id
+
+3. Éditer le fichier pour garder ce que tu veux:
+   - Supprimer les marqueurs <<<<<<, =======, >>>>>>>
+   - Garder les bonnes lignes de code
+   - Ou combiner les deux versions
+
+4. Après résolution:
+   git add index.html
+   git commit -m "Résolution du conflit dans index.html"
+   git push origin main
+
+💡 EXEMPLE PRATIQUE:
+────────────────────
+Fichier en conflit (index.html):
+───────────────────────────────────
+<!DOCTYPE html>
+<html>
+<head>
+<<<<<<< HEAD
+    <title>Gestion TP - Version Hamza</title>
+=======
+    <title>Gestion TP - Version Ahmed</title>
+>>>>>>> ahmed-branch
+</head>
+
+Après résolution (on garde une version unifiée):
+────────────────────────────────────────────────
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion TP - Prof. DAIF</title>
+</head>
+
+Puis:
+────
+git add index.html
+git commit -m "Résolution conflit: titre de la page unifié"
+git push origin main
+
+🎯 ÉVITER LES CONFLITS
+──────────────────────
+1. Toujours faire git pull avant de commencer à travailler
+2. Commiter et push régulièrement
+3. Communiquer avec ton équipe sur qui travaille sur quoi
+4. Utiliser des branches pour les grosses fonctionnalités
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    7️⃣ COMMANDES DOCKER
+═══════════════════════════════════════════════════════════════════════════════
+
+🔨 BUILD ET RUN
+───────────────
+# Build une image
+docker build -t fsbm-tp:latest .
+docker build -t mon-nom/fsbm-tp:v1.0 .
+
+# Run un conteneur
+docker run -d -p 8080:80 fsbm-tp:latest
+docker run -d -p 8080:80 --name mon-conteneur fsbm-tp:latest
+
+# Options utiles:
+# -d : Mode détaché (en arrière-plan)
+# -p : Mapping de ports (port_hote:port_conteneur)
+# --name : Donner un nom au conteneur
+# -v : Monter un volume (pour persister les données)
+
+📊 CONSULTER ET GÉRER
+──────────────────────
+docker ps                         # Voir les conteneurs actifs
+docker ps -a                      # Voir tous les conteneurs
+docker images                     # Voir les images
+docker logs container_id          # Voir les logs
+docker logs -f container_id       # Suivre les logs en temps réel
+docker stats                      # Voir les statistiques
+docker inspect container_id       # Infos détaillées
+
+🛑 ARRÊTER ET SUPPRIMER
+───────────────────────
+docker stop container_id          # Stopper un conteneur
+docker start container_id         # Redémarrer un conteneur
+docker restart container_id       # Restart un conteneur
+docker rm container_id            # Supprimer un conteneur
+docker rm -f container_id         # Supprimer (force)
+docker rmi image_id               # Supprimer une image
+docker system prune               # Nettoyer tout ce qui est inutilisé
+docker image prune                # Nettoyer les images inutilisées
+
+🌐 DOCKER HUB
+─────────────
+# Login
+docker login
+# Username: ton_username
+# Password: ton_mot_de_passe
+
+# Tag une image
+docker tag fsbm-tp:latest hamzadev2025/fsbm-tp:latest
+
+# Push vers Docker Hub
+docker push hamzadev2025/fsbm-tp:latest
+
+# Pull depuis Docker Hub
+docker pull hamzadev2025/fsbm-tp:latest
+
+# Run depuis Docker Hub
+docker run -d -p 8080:80 hamzadev2025/fsbm-tp:latest
+
+💡 WORKFLOW COMPLET DOCKER
+──────────────────────────
+# 1. Build l'image
+docker build -t fsbm-tp:latest .
+
+# 2. Tester localement
+docker run -d -p 8080:80 --name test-fsbm fsbm-tp:latest
+# Ouvrir http://localhost:8080
+
+# 3. Si ça marche, push vers Docker Hub
+docker tag fsbm-tp:latest hamzadev2025/fsbm-tp:v1.0
+docker push hamzadev2025/fsbm-tp:v1.0
+
+# 4. Ton ami peut maintenant pull et run
+docker pull hamzadev2025/fsbm-tp:v1.0
+docker run -d -p 8080:80 hamzadev2025/fsbm-tp:v1.0
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    8️⃣ BONNES PRATIQUES
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ MESSAGES DE COMMIT
+─────────────────────
+❌ Mauvais:
+git commit -m "update"
+git commit -m "fix"
+git commit -m "changements"
+
+✅ Bons:
+git commit -m "Ajout du footer fixe avec liens de contact"
+git commit -m "Correction du bug responsive sur mobile"
+git commit -m "Amélioration du style des cartes étudiants"
+
+Format recommandé:
+Type: Description courte
+
+Types courants:
+- feat: Nouvelle fonctionnalité
+- fix: Correction de bug
+- docs: Documentation
+- style: Changements de style (CSS)
+- refactor: Refactorisation du code
+
+Exemples:
+git commit -m "feat: Ajout d'une section contact dans le footer"
+git commit -m "fix: Correction de l'alignement du header sur mobile"
+git commit -m "style: Amélioration des couleurs et animations"
+
+📂 FICHIER .gitignore
+─────────────────────
+Créer un fichier .gitignore à la racine du projet:
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+
+🔄 WORKFLOW QUOTIDIEN
+─────────────────────
+1. Le matin (ou avant de travailler):
+   git pull origin main
+
+2. Travailler sur les fichiers...
+
+3. Régulièrement:
+   git status
+   git add .
+   git commit -m "Description"
+   git push origin main
+
+4. Avant de finir:
+   git push origin main
+
+🌿 UTILISATION DES BRANCHES
+────────────────────────────
+Pour une nouvelle fonctionnalité:
+git checkout -b feature/nom-fonctionnalite
+# Travailler...
+git add .
+git commit -m "Description"
+git push origin feature/nom-fonctionnalite
+# Créer une Pull Request sur GitHub
+# Après merge, revenir sur main:
+git checkout main
+git pull origin main
+git branch -d feature/nom-fonctionnalite
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    9️⃣ DÉPANNAGE (TROUBLESHOOTING)
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ PROBLÈME: "Permission denied (publickey)"
+─────────────────────────────────────────────
+Solution: Configurer SSH ou utiliser HTTPS
+
+Pour HTTPS:
+git remote set-url origin https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+
+❌ PROBLÈME: "Your branch is behind 'origin/main'"
+───────────────────────────────────────────────────
+Solution:
+git pull origin main
+
+❌ PROBLÈME: "Your branch is ahead of 'origin/main'"
+─────────────────────────────────────────────────────
+Solution:
+git push origin main
+
+❌ PROBLÈME: "fatal: refusing to merge unrelated histories"
+────────────────────────────────────────────────────────────
+Solution:
+git pull origin main --allow-unrelated-histories
+
+❌ PROBLÈME: J'ai commit sur la mauvaise branche
+─────────────────────────────────────────────────
+Solution:
+# Créer une nouvelle branche avec ce commit
+git branch nouvelle-branche
+
+# Revenir sur l'ancienne branche
+git checkout ancienne-branche
+
+# Annuler le dernier commit (sans perdre les modifs)
+git reset --soft HEAD~1
+
+# Basculer sur la nouvelle branche
+git checkout nouvelle-branche
+
+❌ PROBLÈME: J'ai modifié des fichiers mais je veux annuler
+────────────────────────────────────────────────────────────
+Pour un fichier spécifique:
+git checkout -- fichier.html
+
+Pour tous les fichiers:
+git checkout -- .
+
+❌ PROBLÈME: Docker dit "port is already allocated"
+────────────────────────────────────────────────────
+Solution 1: Utiliser un autre port
+docker run -d -p 8081:80 fsbm-tp:latest
+
+Solution 2: Trouver et stopper le conteneur qui utilise le port
+docker ps
+docker stop container_id
+
+❌ PROBLÈME: "ERROR: Cannot connect to the Docker daemon"
+──────────────────────────────────────────────────────────
+Solution: Démarrer Docker Desktop
+Windows/Mac: Ouvrir l'application Docker Desktop
+Linux: sudo systemctl start docker
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    📝 EXEMPLES COMPLETS DE WORKFLOWS
+═══════════════════════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    SCÉNARIO 1: HAMZA FAIT DES MODIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+cd FSBM-Daif-Docker-TP_001
+git pull origin main
+# Modifier index.html et style.css
+git status
+git add index.html style.css
+git commit -m "Amélioration du design du footer et ajout d'animations"
+git push origin main
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    SCÉNARIO 2: AHMED (COLLABORATEUR) AJOUTE UNE FONCTIONNALITÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Cloner le projet (première fois seulement)
+git clone https://github.com/hamzafahem/FSBM-Daif-Docker-TP_001.git
+cd FSBM-Daif-Docker-TP_001
+
+# Récupérer les dernières modifications
+git pull origin main
+
+# Créer une branche
+git checkout -b feature/ajout-formulaire-contact
+
+# Faire les modifications...
+# Créer contact.html et modifier index.html
+
+git status
+git add contact.html index.html
+git commit -m "Ajout d'un formulaire de contact avec validation"
+git push origin feature/ajout-formulaire-contact
+
+# Aller sur GitHub et créer une Pull Request
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    SCÉNARIO 3: DÉPLOIEMENT AVEC DOCKER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 1. Build l'image
+docker build -t fsbm-tp:v1.0 .
+
+# 2. Tester localement
+docker run -d -p 8080:80 --name fsbm-test fsbm-tp:v1.0
+# Ouvrir http://localhost:8080 et tester
+
+# 3. Si OK, tag et push vers Docker Hub
+docker tag fsbm-tp:v1.0 hamzadev2025/fsbm-tp:v1.0
+docker login
+docker push hamzadev2025/fsbm-tp:v1.0
+
+# 4. Ton ami peut maintenant déployer
+docker pull hamzadev2025/fsbm-tp:v1.0
+docker run -d -p 8080:80 hamzadev2025/fsbm-tp:v1.0
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    📞 AIDE RAPIDE - COMMANDES LES PLUS UTILISÉES
+═══════════════════════════════════════════════════════════════════════════════
+
+GIT - QUOTIDIEN:
+────────────────
+git status                    # Que se passe-t-il?
+git pull origin main          # Récupérer les dernières modifs
+git add .                     # Ajouter tous les fichiers
+git commit -m "Message"       # Sauvegarder les changements
+git push origin main          # Envoyer sur GitHub
+
+GIT - BRANCHES:
+───────────────
+git checkout -b ma-branche    # Créer une nouvelle branche
+git checkout main             # Revenir sur main
+git merge ma-branche          # Fusionner ma-branche dans la branche actuelle
+
+DOCKER - QUOTIDIEN:
+───────────────────
+docker build -t nom:tag .     # Build une image
+docker run -d -p 8080:80 nom  # Run un conteneur
+docker ps                     # Voir les conteneurs actifs
+docker logs container_id      # Voir les logs
+docker stop container_id      # Stopper un conteneur
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    🎓 RESSOURCES SUPPLÉMENTAIRES
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 Documentation Officielle:
+────────────────────────────
+Git: https://git-scm.com/doc
+GitHub: https://docs.github.com
+Docker: https://docs.docker.com
+
+🎥 Tutoriels Vidéo (YouTube):
+──────────────────────────────
+- "Git & GitHub pour débutants" - Grafikart
+- "Docker en 10 minutes" - Cocadmin
+- "Pull Request GitHub" - Underscore_
+
+💡 Cheat Sheets:
+────────────────
+Git Cheat Sheet: https://education.github.com/git-cheat-sheet-education.pdf
+Docker Cheat Sheet: https://dockerlabs.collabnix.com/docker/cheatsheet/
+
+
+═══════════════════════════════════════════════════════════════════════════════
+    ✅ FIN DE LA DOCUMENTATION
+    Bonne chance avec votre projet! 🚀
+═══════════════════════════════════════════════════════════════════════════════

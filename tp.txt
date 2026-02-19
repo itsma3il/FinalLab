@@ -1,0 +1,46 @@
+Préparation avant de commencer le TP
+
+Avant de démarrer le TP, il est indispensable d’installer Docker Desktop, qui servira d’environnement pour exécuter et gérer nos conteneurs.
+Docker nous permettra d’isoler nos applications (par exemple FastAPI, base de données, etc.) et de les exécuter facilement sur n’importe quelle machine.
+
+🔹 Étapes d’installation :
+
+Rendez-vous sur le site officiel de Docker :
+👉 https://www.docker.com/products/docker-desktop/
+
+========================>     docker --version
+                              docker info
+
+Dockerfile : Un ensemble d'instructions pour dire à Docker comment construire une image.
+
+
+
++++++++++++++++++>>     docker build -t daiftest:latest .
+                        docker run -d -p 8888:80 daiftest:latest
+
+
+                        docker login
+                        docker tag daiftest:latest hamzadev2025/daiftest:latest
+                        docker push hamzadev2025/daiftest:latest
+
+
+
+
+                        docker pull hamzadev2025/daiftest:latest
+                        docker tag hamzadev2025/daiftest:latest monnouveau:latest
+                        docker run -d -p 8081:80 monnouveau:latest
+
+
+
+                        docker ps -a
+                        docker stop <id>    # Stopper un conteneur
+                        docker rm <id>      # Supprimer un conteneur
+                        docker image prune  # Supprimer les images inutilisées
+                        # Voir les logs d'un conteneur
+                        docker logs <id>
+                        docker logs -f <id>  # Suivre les logs en temps réel
+                        # Voir les images disponibles
+                         docker images
+                         docker stats
+
+
